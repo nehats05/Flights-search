@@ -1,6 +1,6 @@
-package com.flightSearch.dao;
+package com.flightSearch.app.dao;
 
-import com.flightSearch.FlightsBean;
+import com.flightSearch.app.FlightsBean;
 
 public interface FlightsDao {
     FlightsBean getFlight(String depTime);

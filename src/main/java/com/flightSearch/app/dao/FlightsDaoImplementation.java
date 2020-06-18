@@ -1,11 +1,10 @@
-package com.flightSearch.dao;
+package com.flightSearch.app.dao;
 
-import com.flightSearch.FlightsBean;
+import com.flightSearch.app.FlightsBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.time.LocalTime;
-import java.util.Optional;
-
+@Component
 public class FlightsDaoImplementation implements FlightsDao {
 
     @Autowired
@@ -13,6 +12,6 @@ public class FlightsDaoImplementation implements FlightsDao {
 
     @Override
     public FlightsBean getFlight(String depTime) {
-       return flightRepository.findByDep(depTime);
+       return flightRepository.getFlight(depTime);
     }
 }

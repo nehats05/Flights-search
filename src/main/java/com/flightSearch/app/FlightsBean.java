@@ -1,15 +1,17 @@
-package com.flightSearch;
+package com.flightSearch.app;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "FLIGHTSDATA")
+@Table(name = "flightsdata")
 public class FlightsBean {
 
-    @Column(name = "flightName")
-    private String flightName;
     @Id
-    @Column(name = "flightDep")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "flightname")
+    private String flightName;
+
+    @Column(name = "flightdep")
     private String flightDeparture;
 
     public FlightsBean()
