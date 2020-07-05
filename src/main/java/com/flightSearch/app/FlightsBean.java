@@ -1,6 +1,7 @@
 package com.flightSearch.app;
 
 import javax.persistence.*;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "flightsdata")
@@ -12,14 +13,12 @@ public class FlightsBean {
     private String flightName;
 
     @Column(name = "flightdep")
-    private String flightDeparture;
+    private LocalTime flightDeparture;
 
     public FlightsBean()
-    {
+    { }
 
-    }
-
-    public FlightsBean(String flightName, String flightDeparture) {
+    public FlightsBean(String flightName, LocalTime flightDeparture) {
         this.flightName = flightName;
         this.flightDeparture = flightDeparture;
     }
@@ -32,12 +31,18 @@ public class FlightsBean {
         this.flightName = flightName;
     }
 
-    public String getFlightDeparture() {
+    public LocalTime getFlightDeparture() {
         return flightDeparture;
     }
 
-    public void setFlightDeparture(String flightDeparture) {
+    public void setFlightDeparture(LocalTime flightDeparture) {
         this.flightDeparture = flightDeparture;
     }
 
+    @Override
+    public String toString() {
+        return "FlightsDetails" +
+                "flightName='" + flightName + '\'' +
+                ", flightDeparture='" + flightDeparture + '\'';
+    }
 }

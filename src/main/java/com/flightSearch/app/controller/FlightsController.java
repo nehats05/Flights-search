@@ -13,8 +13,8 @@ public class FlightsController {
 
     //based on the departure time fetch the flight details
     @RequestMapping(value = "/getFlights",method = RequestMethod.GET)
-    public FlightsBean getFlights(@RequestParam("duration") String duration){
-        FlightsBean fli = flightsService.getFlight(duration);
+    public FlightsBean[] getFlights(@RequestParam("duration") String duration){
+        FlightsBean[] fli = flightsService.getFlight(duration);
            if(fli!=null)
                return fli;
            else

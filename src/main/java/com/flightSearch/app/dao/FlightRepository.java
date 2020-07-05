@@ -6,9 +6,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalTime;
+
 @Repository
 public interface FlightRepository extends CrudRepository<FlightsBean,Long> {
 
-    @Query(value = "select * from flightsdata where flightdep = :flightDeparture",nativeQuery = true)
-    FlightsBean getFlight(@Param(value = "flightDeparture") String flightDeparture);
+    @Query(value = "select flightname,flightdep from flightsdata where flightdep between :flightDeparturebefore and :flightDepartureafter",nativeQuery = true)
+    FlightsBean[] getFlight(@Param(value = "flightDeparturebefore") LocalTime flightDeparturebefore,
+                          @Param(value = "flightDepartureafter") LocalTime flightDepartureafter);
 }

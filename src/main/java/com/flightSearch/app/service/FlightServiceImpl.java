@@ -15,7 +15,7 @@ public class FlightServiceImpl implements FlightsService {
 
     @Override
     @Transactional(readOnly = true)
-    public FlightsBean getFlight(String depTime) {
+    public FlightsBean[] getFlight(String depTime) {
         return flightsDao.getFlight(depTime);
     }
 }

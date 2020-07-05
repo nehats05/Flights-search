@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Search</title>
+</head>
+<body>
+  <h3>Flight Search</h3>
+  <form th:action="@{/getFlights}">
+ <label>Enter departure time : </label> <input type="text" th:name="duration" placeholder="Format: 05:00 AM">  <br/>
+ <button type="submit">Search</button>
+  </form>
+</body>
+</html>
