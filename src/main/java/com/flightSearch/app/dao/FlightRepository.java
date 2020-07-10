@@ -11,7 +11,7 @@ import java.time.LocalTime;
 @Repository
 public interface FlightRepository extends CrudRepository<FlightsBean,Long> {
 
-    @Query(value = "select flightname,flightdep from flightsdata where flightdep between :flightDeparturebefore and :flightDepartureafter",nativeQuery = true)
+    @Query(value = "select flightname,cast(flightdep as datetime) as flightdep from flightsdata where flightdep between :flightDeparturebefore and :flightDepartureafter",nativeQuery = true)
     FlightsBean[] getFlight(@Param(value = "flightDeparturebefore") LocalTime flightDeparturebefore,
                           @Param(value = "flightDepartureafter") LocalTime flightDepartureafter);
 }

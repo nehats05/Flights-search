@@ -1,6 +1,7 @@
 package com.flightSearch.app;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -8,10 +9,11 @@ import java.time.LocalTime;
 public class FlightsBean {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "flightname")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String flightName;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "flightdep")
     private LocalTime flightDeparture;
 
@@ -41,8 +43,8 @@ public class FlightsBean {
 
     @Override
     public String toString() {
-        return "FlightsDetails" +
-                "flightName='" + flightName + '\'' +
-                ", flightDeparture='" + flightDeparture + '\'';
+        return "FlightsDetails :" +
+                "flightName=" + flightName  +
+                ", flightDeparture=" + flightDeparture;
     }
 }
