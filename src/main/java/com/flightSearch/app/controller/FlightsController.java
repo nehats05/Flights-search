@@ -15,8 +15,9 @@ public class FlightsController {
     @RequestMapping(value = "/getFlights",method = RequestMethod.GET)
     public FlightsBean[] getFlights(@RequestParam("duration") String duration){
         FlightsBean[] fli = flightsService.getFlight(duration);
-           if(fli!=null)
-               return fli;
+           if(fli!=null) {
+               return fli ;
+           }
            else
                return null;
     }
